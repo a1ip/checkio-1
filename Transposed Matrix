@@ -6,3 +6,8 @@ def checkio(data):
             temp.append(row[i])
         result.append(temp)
     return result
+
+
+Solution 2:
+def checkio(matr):
+    return list(map(list, zip(*matr)))
