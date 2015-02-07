@@ -1,0 +1,8 @@
+def checkio(data):
+    result = []
+    for i in range(len(data[0])):
+        temp = []
+        for row in data:
+            temp.append(row[i])
+        result.append(temp)
+    return result
