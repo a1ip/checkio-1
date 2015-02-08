@@ -15,3 +15,13 @@ def checkio(expression):
                     return False
     return True if stack == [] else False
             
+#better solution
+def checkio(data):
+    stack=[""]
+    brackets={"(":")","[":"]","{":"}"}
+    for c in data:
+        if c in brackets:
+            stack.append(brackets[c])
+        elif c in brackets.values() and c!=stack.pop():
+            return False
+    return stack==[""]
