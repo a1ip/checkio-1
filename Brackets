@@ -1,0 +1,17 @@
+import re
+def checkio(expression):
+    pair = {']':'[', '}':'{', ')':'('}
+    stack = []
+    for character in expression:
+        if re.match('[\(\{\[]', character):
+            stack.append(character)
+        if re.match('[\]\}\)]', character):
+            if stack == []:
+                return False
+            else:
+                if stack[-1] == pair[character]:
+                    stack.pop()
+                else:
+                    return False
+    return True if stack == [] else False
+            
