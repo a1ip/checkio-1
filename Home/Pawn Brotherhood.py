@@ -1,3 +1,4 @@
+# the pawn can only walk in front diagonally
 def safe_pawns(pawns):
     pawns_indexes = set()
     for p in pawns:
