@@ -1,3 +1,5 @@
+#for bool logical operation, should transfer the vairable to the bool type first
+
 OPERATION_NAMES = ("conjunction", "disjunction", "implication", "exclusive", "equivalence")
 
 
