@@ -5,7 +5,18 @@ OTHER_TENS = ["", "ten", "twenty", "thirty", "forty", "fifty",
 HUNDRED = "hundred"
 THOUSAND = "thousand"
 
-
+def number_less_1000(number):
+    result = ""
+    if number // 100 != 0:
+        result += TENS[number // 100] + ' ' + HUNDRED + ' '
+        number -= number // 100 * 100
+    if number < 20:
+        result += TENS[number]
+    else:
+        result += OTHER_TENS[number // 10] + ' ' + TENS[number % 10]
+        
+    return result
+    
 def tell_number(number):
     result = ""
     if number == 0:
@@ -16,27 +27,13 @@ def tell_number(number):
     if number // 1000 != 0:
         temp = number // 1000
         number = number % 1000
-        if temp // 100 != 0:
-            result += TENS[temp // 100] + ' ' + HUNDRED + ' '
-            temp -= temp // 100 * 100
-        if temp < 20:
-            result += TENS[temp]
-        else:
-            result += OTHER_TENS[temp // 10] + ' ' + TENS[temp % 10]
+        result += number_less_1000(temp)
         result += ' ' + THOUSAND + ' '
-    # part of 1000 ~ 1
-    temp = number
-    if temp // 100 != 0:
-        result += TENS[temp // 100] + ' ' + HUNDRED + ' '
-        temp -= temp // 100 * 100
-    if temp < 20:
-        result += TENS[temp]
-    else:
-        result += OTHER_TENS[temp // 10] + ' ' + TENS[temp % 10]
+    result += number_less_1000(number)
     if result[-1] == ' ':
         result = result[:-1]
-    print (result)
     return result
+
 
 
 if __name__ == '__main__':
