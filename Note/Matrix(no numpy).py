@@ -1,3 +1,6 @@
+# Matrix transpose
+zip(*matrix)
+
 # sum of column
 col_sum = []
 for col in zip(*matrix):
