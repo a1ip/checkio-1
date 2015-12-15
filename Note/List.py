@@ -30,3 +30,9 @@
 'John'
 >>> queue                           # Remaining queue in order of arrival
 deque(['Michael', 'Terry', 'Graham'])
+
+
+
+# Useful function
+# find element
+[1,2,3].index(2) # =>1
